@@ -1,7 +1,10 @@
 import json
 import collections
 import numpy as np
+import datetime
+from datetime import date
 from flask import Flask
+
 app = Flask(__name__)
 
 
@@ -29,7 +32,7 @@ def index():
 
 @app.route('/Ex2')
 def index2():
-    a = [1,2]
+    a = [1, 2]
     b = [1]
     Data = []
     ShowData = []
@@ -37,25 +40,26 @@ def index2():
         if Sarawut not in b:
             Data.append(Sarawut)
     Array_diff1 = [
-        a,b ,"return",Data 
+        a, b, "return", Data
     ]
     ShowData.append(Array_diff1)
-    
-    
-    a = [1,2,2,2,3]
+
+    a = [1, 2, 2, 2, 3]
     b = [2]
     Data2 = []
     for Sarawut in a:
         if Sarawut not in b:
             Data2.append(Sarawut)
     Array_diff2 = [
-        a,b ,"return",Data2 
+        a, b, "return", Data2
     ]
     ShowData.append(Array_diff2)
     return ShowData
 
 
-
+@app.route('/Ex3')
+def index3(birthdate):
+     return "xxxx"
 
 
 if __name__ == "__main__":

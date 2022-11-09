@@ -78,19 +78,26 @@ def _get_():
     
     
 
-@app.route('/Ex5')
-def index5():
-    input=[
-        {'id':1,'price':50,'payment_date':'2022-02-26 06:00:00'},
-        {'id':2,'price':20,'payment_date':'2022-02-26 07:00:00'},
-        {'id':3,'price':30,'payment_date':'2022-03-15 08:42:03'},
-        {'id':4,'price':100,'payment_date':'2022-04-20 09:45:00'},
-        {'id':5,'price':200,'payment_date':'2022-04-22 15:00:00'}
-        ]
-    prog_string = json.dumps(input,indent=4)
-    print(input)
-    return prog_string
 
+
+@app.route('/Ex5')
+def add(n):
+    return {
+        '1':n
+    }
+      
+input=[
+{'id':1,'price':50,'payment_date':'2022-02-26 06:00:00'},
+{'id':2,'price':20,'payment_date':'2022-02-26 07:00:00'},
+{'id':3,'price':30,'payment_date':'2022-03-15 08:42:03'},
+{'id':4,'price':100,'payment_date':'2022-04-20 09:45:00'},
+{'id':5,'price':200,'payment_date':'2022-04-22 15:00:00'}
+        ]
+result = map(add ,input )
+tuple = tuple(result)
+print(tuple)
+    
+    
 
 
 

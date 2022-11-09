@@ -1,10 +1,11 @@
 import json
 import collections
 import numpy as np
-import datetime
+from datetime import datetime
 from datetime import date
-from flask import Flask
-
+from flask import Flask, jsonify, request,render_template
+import os
+import logging
 app = Flask(__name__)
 
 
@@ -58,8 +59,41 @@ def index2():
 
 
 @app.route('/Ex3')
-def index3(birthdate):
-     return "xxxx"
+def index3():
+    gendayIn1 = '2021-10-21'
+    gendayIn2 = '2021-12-21'
+    gendayIn3 = '2021-15-21'
+    genday =  1
+    genday2 = 2
+    genday3 = 11
+
+
+
+
+
+@app.route('/path/index',methods = ['GET'])
+def _get_():
+    if request.method == 'GET':
+        return  {"message":"Hello Jpark"}
+    else:
+        return "Error"
+    
+    
+
+@app.route('/Ex5')
+def index5():
+    input=[
+        {'id':1,'price':50,'payment_date':'2022-02-26 06:00:00'},
+        {'id':2,'price':20,'payment_date':'2022-02-26 07:00:00'},
+        {'id':3,'price':30,'payment_date':'2022-03-15 08:42:03'},
+        {'id':4,'price':100,'payment_date':'2022-04-20 09:45:00'},
+        {'id':5,'price':200,'payment_date':'2022-04-22 15:00:00'}
+        ]
+    prog_string = json.dumps(input,indent=4)
+    print(input)
+    return prog_string
+
+
 
 
 if __name__ == "__main__":

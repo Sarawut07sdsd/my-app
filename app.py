@@ -4,8 +4,6 @@ import numpy as np
 from datetime import datetime
 from datetime import date
 from flask import Flask, jsonify, request,render_template
-import os
-import logging
 app = Flask(__name__)
 
 
